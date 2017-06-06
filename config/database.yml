@@ -79,6 +79,9 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  url: <%= ENV["DATABASE_URL"] %>
-  pool: <%= ENV["DB_POOL] || ENV["RAILS_MAX_THREADS"] || 5 %>
+  <<: *default
+  database: myapp_production
+  username: myapp
+  pool: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
+
 
