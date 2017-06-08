@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 
-  http_basic_authenticate_with name: "matttrevor", password: "gadget13", only: :destroy
+  before_action: logged_in_user, only: [:create, :destroy]
 
   def index
     @articles = Article.all
